@@ -1,10 +1,10 @@
 // Personal API Key for OpenWeatherMap API
 const url = 'https://api.openweathermap.org/data/2.5/weather?';
-const APIKey = '2d85dbe3752f30727dbb98ec078abb2d' ;
+const APIKey = '2d85dbe3752f30727dbb98ec078abb2d&units=metric';
 
 // get the date object
 let d = new Date();
-let newDate = d.getMonth()+'.'+ d.getDate()+'.'+ d.getFullYear();
+let newDate = d.getMonth()+1+'.'+ d.getDate()+'.'+ d.getFullYear();
 
 // Event listener to add function to the generate btn
 const generate = document.getElementById('generate');
@@ -21,7 +21,7 @@ generate.addEventListener('click',()=>{
     getRequest(zip)
     .then((data)=>{
         postData('/add',{
-            temp: data.main.temp- 273.15,
+            temp: data.main.temp,
             date: newDate,
             feelings: feelings 
         });
@@ -31,7 +31,7 @@ generate.addEventListener('click',()=>{
 
 /* Function to GET Web API Data*/
 const getRequest = async (zip)=>{
-    const res = await fetch (`${url}zip=${zip}&appid=${APIKey}`);
+    const res = await fetch (`${url}zip=${zip}&appid=${APIKey}&units=metric`);
     try {
         const data = await res.json();
         return data;
@@ -76,3 +76,8 @@ const updateUI = async () => {
     }
 
 };
+
+
+
+
+
