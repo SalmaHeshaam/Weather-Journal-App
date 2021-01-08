@@ -10,26 +10,28 @@
 <body>
     <div id="app">
         <div>
-            <div class="holder headline">
-                Weather Journal App
+            <div>
+                <div class="holder headline">
+                    Weather Journal App
+                </div>
+                <div class="holder zip">
+                    <label for="zip">ZIP Code</label>
+                    <input type="text" id="zip" placeholder="Enter Valid ZIP Code">
+                </div>
+                <div class="holder feel">
+                    <label for="feelings">How are you feeling today?</label>
+                    <textarea class="myInput" id="feelings" placeholder="Enter your feelings here" rows="8"
+                        cols="90"></textarea>
+                    <button id="generate" type="submit">Generate</button>
+                </div>
             </div>
-            <div class="holder zip">
-                <label for="zip">ZIP Code</label>
-                <input type="text" id="zip" placeholder="Enter Valid ZIP Code">
-            </div>
-            <div class="holder feel">
-                <label for="feelings">How are you feeling today?</label>
-                <textarea class="myInput" id="feelings" placeholder="Enter your feelings here" rows="8"
-                    cols="90"></textarea>
-                <button id="generate" type="submit">Generate</button>
-            </div>
-        </div>
-        <div class="holder entry">
-            <div class="title">Most Recent Entry</div>
-            <div id="entryHolder">
-                <div id="date"></div>
-                <div id="temp"></div>
-                <div id="content"></div>
+            <div class="holder entry">
+                <div class="title">Most Recent Entry</div>
+                <div id="entryHolder">
+                    <div id="date"></div>
+                    <div id="temp"></div>
+                    <div id="content"></div>
+                </div>
             </div>
         </div>
     </div>
@@ -38,3 +40,6 @@
 </body>
 
 </html>
+
+
+
